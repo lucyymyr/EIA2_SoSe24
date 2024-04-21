@@ -1,0 +1,73 @@
+.box {
+    width: 200px; /* Breite der Box */
+    height: 180px; /* Höhe der Box */
+    background-color: rgb(232, 234, 239); /* Hintergrundfarbe */
+    border: 1px solid rgb(19, 46, 71); /* Rand */
+    padding: 20px; /* Innenabstand */
+    border-radius: 10px; /* Radius für die Ecken */
+  }
+
+
+  /* Stil für den roten Button */
+  #loeschen {
+    background-color: rgb(176, 15, 15);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Ändere die Größe des Buttons */
+#loeschen {
+    font-size: 10px;
+    padding: 10px 20px;
+}
+
+
+#loeschen:hover {
+    background-color: #470f0f; /* Dunklere rote Farbe beim Überfahren */
+}
+
+ /* Stil für die Inhaltselemente */
+ .content {
+    margin-bottom: 10px;
+    /* Andere Stileigenschaften nach Bedarf hinzufügen */
+}
+
+/* Stil für die einzelnen Inputs */
+.content input {
+    margin-bottom: 5px; /* Leichter Abstand nach unten */
+    display: block; /* Jeder Input auf eigener Zeile */
+}
+
+/* Stil für den Button */
+button {
+    background-color: #364f6a; /* Blaue Hintergrundfarbe */
+    color: rgb(216, 226, 232); /* Weiße Textfarbe */
+    padding: 7px 13px; /* Polsterung (oben/unten, links/rechts) */
+    border: none; /* Kein Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger-Cursor beim Überfahren */
+    font-size: 16px; /* Schriftgröße */
+    font-family: Arial, sans-serif; /* Schriftart */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
+    transition: background-color 0.3s; /* Übergang für Hintergrundfarbe */
+}
+
+/* Ändere den Hintergrund beim Überfahren */
+button:hover {
+    background-color: #042140; /* Dunklere blaue Farbe */
+}
+
+button {
+    margin-bottom: 20px; /* Abstand unter dem Button */
+}
+
+body {
+    background-color: #6b7397;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
