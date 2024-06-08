@@ -58,7 +58,7 @@ function drawRandomShape(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElemen
   
     // Zeichne eine zufällige Anzahl von Formen
     for (let i = 0; i < numShapes; i++) {
-      drawRandomShape(ctx, canvas);
+      //drawRandomShape(ctx, canvas);
     }
   }
   

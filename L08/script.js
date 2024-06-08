@@ -50,7 +50,7 @@ function generateArt() {
     const numShapes = Math.floor(Math.random() * 50) + 20; // Zufällige Anzahl zwischen 20 und 69
     // Zeichne eine zufällige Anzahl von Formen
     for (let i = 0; i < numShapes; i++) {
-        drawRandomShape(ctx, canvas);
+        //drawRandomShape(ctx, canvas);
     }
 }
 // Generiere die Kunst

@@ -10,19 +10,19 @@ var Duckpond;
         Duckpond.ctx = canvas.getContext("2d");
         if (!Duckpond.ctx)
             return;
-        for (let i = 0; i = 3; i++) {
-            let cloud = new Duckpond.Cloud(20, 20, 50, 15, 5);
-            moveable.push(cloud);
-            console.log("hilfe");
-        }
+        // for(let i:number = 0;i=3;i++ ){
+        //     let cloud: Cloud = new Cloud(20,20,50,15,5)
+        //     moveable.push(cloud);
+        //     console.log("hilfe")
+        // }
         if (Duckpond.ctx) {
             const sky = new Sky();
-            // const clouds = [
-            //     new Cloud(100, 50, 20, 10, 0.5),
-            //     new Cloud(300, 80, 25, 12, 0.3),
-            //     new Cloud(500, 60, 20, 10, 0.4),
-            //     new Cloud(700, 40, 30, 15, 0.6)
-            // ];
+            const clouds = [
+                new Duckpond.Cloud(100, 50, 20, 10, 0.5),
+                new Duckpond.Cloud(300, 80, 25, 12, 0.3),
+                new Duckpond.Cloud(500, 60, 20, 10, 0.4),
+                new Duckpond.Cloud(700, 40, 30, 15, 0.6)
+            ];
             const mountains = [
                 new Mountain([{ x: 0, y: 300 }, { x: 100, y: 100 }, { x: 200, y: 300 }]),
                 new Mountain([{ x: 150, y: 300 }, { x: 300, y: 150 }, { x: 450, y: 300 }]),
@@ -33,20 +33,20 @@ var Duckpond;
             const grass = new Grass();
             const pond = new Pond();
             const pondBounds = pond.getBounds(canvas.width, canvas.height);
-            // const ducks = [
-            //     new Duck(pondBounds.left + 50, pondBounds.top + 60, 0.2, 1, pondBounds),
-            //     new Duck(pondBounds.left + 100, pondBounds.top + 40, 0.15, 1, pondBounds),
-            //     new Duck(pondBounds.left + 150, pondBounds.top + 80, 0.25, 1, pondBounds),
-            //     new Duck(pondBounds.left + 200, pondBounds.top + 60, 0.2, 1, pondBounds),
-            //     new Duck(pondBounds.left + 250, pondBounds.top + 100, 0.3, 1, pondBounds)
-            // ];
-            // const birds = [
-            //     new Bird(100, 70, 1),
-            //     new Bird(230, 150, 0.8),
-            //     new Bird(340, 120, 1.2),
-            //     new Bird(480, 180, 1),
-            //     new Bird(600, 130, 1.5)
-            // ];
+            const ducks = [
+                new Duckpond.Duck(pondBounds.left + 50, pondBounds.top + 60, 0.2, 1, pondBounds),
+                new Duckpond.Duck(pondBounds.left + 100, pondBounds.top + 40, 0.15, 1, pondBounds),
+                new Duckpond.Duck(pondBounds.left + 150, pondBounds.top + 80, 0.25, 1, pondBounds),
+                new Duckpond.Duck(pondBounds.left + 200, pondBounds.top + 60, 0.2, 1, pondBounds),
+                new Duckpond.Duck(pondBounds.left + 250, pondBounds.top + 100, 0.3, 1, pondBounds)
+            ];
+            const birds = [
+                new Duckpond.Bird(100, 70, 1),
+                new Duckpond.Bird(230, 150, 0.8),
+                new Duckpond.Bird(340, 120, 1.2),
+                new Duckpond.Bird(480, 180, 1),
+                new Duckpond.Bird(600, 130, 1.5)
+            ];
             const flowers = [
                 new Flower(100, 400),
                 new Flower(200, 540),
@@ -55,35 +55,35 @@ var Duckpond;
                 new Flower(700, 500)
             ];
             const tree = new Tree(canvas.width - 50, canvas.height);
-            // const bees = [
-            //     new Bee(50, 50, 1),
-            //     new Bee(150, 150, 1),
-            //     new Bee(250, 100, 1),
-            //     new Bee(350, 200, 1),
-            //     new Bee(450, 50, 1)
-            // ];
-            // function drawScene() {
-            //     ctx.clearRect(0, 0, canvas.width, canvas.height);
-            //     sky.draw(ctx);
-            //     clouds.forEach(cloud => cloud.draw());
-            //     mountains.forEach(mountain => mountain.draw(ctx));
-            //     grass.draw(ctx);
-            //     pond.draw(ctx);
-            //     ducks.forEach(duck => duck.draw());
-            //     birds.forEach(bird => bird.draw());
-            //     flowers.forEach(flower => flower.draw(ctx));
-            //     tree.draw(ctx);
-            //     bees.forEach(bee => bee.draw());
-            // }
-            // function updateScene() {
-            //     clouds.forEach(cloud => cloud.update());
-            //     ducks.forEach(duck => duck.update());
-            //     birds.forEach(bird => bird.update());
-            //     bees.forEach(bee => bee.update());
-            // }
+            const bees = [
+                new Duckpond.Bee(50, 50, 1),
+                new Duckpond.Bee(150, 150, 1),
+                new Duckpond.Bee(250, 100, 1),
+                new Duckpond.Bee(350, 200, 1),
+                new Duckpond.Bee(450, 50, 1)
+            ];
+            function drawScene() {
+                Duckpond.ctx.clearRect(0, 0, canvas.width, canvas.height);
+                sky.draw(Duckpond.ctx);
+                clouds.forEach(cloud => cloud.draw());
+                mountains.forEach(mountain => mountain.draw(Duckpond.ctx));
+                grass.draw(Duckpond.ctx);
+                pond.draw(Duckpond.ctx);
+                ducks.forEach(duck => duck.draw());
+                birds.forEach(bird => bird.draw());
+                flowers.forEach(flower => flower.draw(Duckpond.ctx));
+                tree.draw(Duckpond.ctx);
+                bees.forEach(bee => bee.draw());
+            }
+            function updateScene() {
+                clouds.forEach(cloud => cloud.update());
+                ducks.forEach(duck => duck.update());
+                birds.forEach(bird => bird.update());
+                bees.forEach(bee => bee.update());
+            }
             function animate() {
-                // updateScene();
-                // drawScene();
+                updateScene();
+                drawScene();
                 requestAnimationFrame(animate);
                 for (let moveables of moveable) {
                     moveables.draw();
